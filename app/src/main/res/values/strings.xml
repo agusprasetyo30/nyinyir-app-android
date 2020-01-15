@@ -5,4 +5,5 @@
     <string name="generate_kalimat">Generate Kalimat</string>
     <string name="hasil">Hasil</string>
     <string name="hasil_generate">Hasil Generate</string>
+    <string name="copy_text">Copy Text</string>
 </resources>

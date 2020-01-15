@@ -38,21 +38,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	public void onClick(View view) {
 		switch (view.getId()) {
 			case R.id.btn_generate :
-				String filter = et_kalimat.getText().toString().trim();
-				Toast.makeText(MainActivity.this, "Generate Sukses", Toast.LENGTH_SHORT).show();
-				et_hasil.setText(filter);
-				
+				if (et_kalimat.getText().toString().isEmpty()) {
+					Toast.makeText(MainActivity.this, "Anda belum mengisi kalimat", Toast.LENGTH_SHORT).show();
+					et_kalimat.requestFocus();
+				} else {
+					String filter = et_kalimat.getText().toString().trim();
+					filter = filter.replaceAll(vokal, "i");
+					Toast.makeText(MainActivity.this, "Generate Sukses", Toast.LENGTH_SHORT).show();
+					et_hasil.setText(filter);
+				}
 				break;
 				
 			case R.id.btn_copy :
-				myClipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-				String text;
-				text = et_hasil.getText().toString();
-				
-				myClip = ClipData.newPlainText("text", text);
-				myClipboard.setPrimaryClip(myClip);
-				
-				Toast.makeText(getApplicationContext(), "Text Copied",Toast.LENGTH_SHORT).show();
+				if (et_hasil.getText().toString().isEmpty()) {
+					Toast.makeText(MainActivity.this, "Anda belum mengisi kalimat", Toast.LENGTH_SHORT).show();
+					et_kalimat.requestFocus();
+				} else {
+					myClipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+					String text;
+					text = et_hasil.getText().toString();
+					
+					myClip = ClipData.newPlainText("text", text);
+					myClipboard.setPrimaryClip(myClip);
+					
+					Toast.makeText(getApplicationContext(), "Text berhasil di copy.", Toast.LENGTH_SHORT).show();
+					
+					et_kalimat.setText("");
+					et_hasil.setText("");
+				}
 				break;
 		}
 	
