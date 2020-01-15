@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Aplikasi Nyinyir</string>
+    <string name="foto_nyinyir">Foto Nyinyir</string>
+    <string name="masukan_kata">Masukan Kalimat</string>
+    <string name="generate_kalimat">Generate Kalimat</string>
+    <string name="hasil">Hasil</string>
+    <string name="hasil_generate">Hasil Generate</string>
+</resources>

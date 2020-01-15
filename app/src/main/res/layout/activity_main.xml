@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="8dp"
+    android:background="@color/background">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="330dp"
+        android:contentDescription="@string/foto_nyinyir"
+        android:src="@drawable/foto"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/masukan_kata"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/masukan_kata"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+    <EditText
+        android:id="@+id/et_kalimat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/scale_text_view"
+        android:hint="@string/masukan_kata"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="@+id/masukan_kata"
+        app:layout_constraintStart_toStartOf="@+id/masukan_kata"
+        app:layout_constraintTop_toBottomOf="@id/masukan_kata" />
+
+    <Button
+        android:id="@+id/btn_generate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/buttonColor"
+        android:text="@string/generate_kalimat"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/et_kalimat"
+        app:layout_constraintStart_toStartOf="@+id/et_kalimat"
+        app:layout_constraintTop_toBottomOf="@id/et_kalimat" />
+
+    <EditText
+        android:id="@+id/et_hasil"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/scale_text_view"
+        android:enabled="false"
+        android:hint="@string/hasil_generate"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="@+id/btn_generate"
+        app:layout_constraintStart_toStartOf="@+id/btn_generate"
+        app:layout_constraintTop_toBottomOf="@id/btn_generate" />
+
+    <Button
+        android:id="@+id/btn_copy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/buttonColor"
+        android:text="Copy Text"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/et_hasil"
+        app:layout_constraintStart_toStartOf="@+id/et_hasil"
+        app:layout_constraintTop_toBottomOf="@id/et_hasil" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
